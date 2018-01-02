@@ -1,0 +1,64 @@
+# JMH version: 1.19
+# VM version: JDK 9.0.1, VM 9.0.1+11
+# VM invoker: /home/marschall/bin/java/jdk-9.0.1/bin/java
+# VM options: -XX:+UseParallelGC -Xmx32g -Xms32g -Xmn31g --add-opens=java.base/java.io=ALL-UNNAMED -XX:+UnlockExperimentalVMOptions -XX:+EnableJVMCI -XX:+UseJVMCICompiler
+# Warmup: 10 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+
+Benchmark                                                            Mode  Cnt     Score      Error   Units
+Jsr310Benchmark.atZone                                              thrpt  100    11.625 ±    0.047  ops/us
+Jsr310Benchmark.atZone:·gc.alloc.rate                               thrpt  100   473.109 ±    2.029  MB/sec
+Jsr310Benchmark.atZone:·gc.alloc.rate.norm                          thrpt  100    64.051 ±    0.129    B/op
+Jsr310Benchmark.atZone:·gc.count                                    thrpt  100       ≈ 0             counts
+Jsr310Benchmark.calendarAddDays                                     thrpt  100     2.080 ±    0.092  ops/us
+Jsr310Benchmark.calendarAddDays:·gc.alloc.rate                      thrpt  100   991.709 ±   42.265  MB/sec
+Jsr310Benchmark.calendarAddDays:·gc.alloc.rate.norm                 thrpt  100   751.029 ±    6.855    B/op
+Jsr310Benchmark.calendarAddDays:·gc.churn.PS_Survivor_Space         thrpt  100  1585.395 ± 1621.201  MB/sec
+Jsr310Benchmark.calendarAddDays:·gc.churn.PS_Survivor_Space.norm    thrpt  100  1314.186 ± 1343.951    B/op
+Jsr310Benchmark.calendarAddDays:·gc.count                           thrpt  100    10.000             counts
+Jsr310Benchmark.calendarAddDays:·gc.time                            thrpt  100    37.000                 ms
+Jsr310Benchmark.format                                              thrpt  100     8.760 ±    0.494  ops/us
+Jsr310Benchmark.format:·gc.alloc.rate                               thrpt  100  2022.403 ±  129.343  MB/sec
+Jsr310Benchmark.format:·gc.alloc.rate.norm                          thrpt  100   365.030 ±   16.714    B/op
+Jsr310Benchmark.format:·gc.churn.PS_Eden_Space                      thrpt  100     0.001 ±    0.002  MB/sec
+Jsr310Benchmark.format:·gc.churn.PS_Eden_Space.norm                 thrpt  100    ≈ 10⁻⁴               B/op
+Jsr310Benchmark.format:·gc.churn.PS_Survivor_Space                  thrpt  100  3172.085 ± 2162.483  MB/sec
+Jsr310Benchmark.format:·gc.churn.PS_Survivor_Space.norm             thrpt  100   719.020 ±  503.005    B/op
+Jsr310Benchmark.format:·gc.count                                    thrpt  100    20.000             counts
+Jsr310Benchmark.format:·gc.time                                     thrpt  100    57.000                 ms
+Jsr310Benchmark.plusDays                                            thrpt  100   358.151 ±   33.951  ops/us
+Jsr310Benchmark.plusDays:·gc.alloc.rate                             thrpt  100  5595.981 ±  511.401  MB/sec
+Jsr310Benchmark.plusDays:·gc.alloc.rate.norm                        thrpt  100    24.695 ±    0.420    B/op
+Jsr310Benchmark.plusDays:·gc.churn.PS_Eden_Space                    thrpt  100     0.009 ±    0.024  MB/sec
+Jsr310Benchmark.plusDays:·gc.churn.PS_Eden_Space.norm               thrpt  100    ≈ 10⁻⁴               B/op
+Jsr310Benchmark.plusDays:·gc.churn.PS_Survivor_Space                thrpt  100  5285.856 ± 2791.132  MB/sec
+Jsr310Benchmark.plusDays:·gc.churn.PS_Survivor_Space.norm           thrpt  100    27.313 ±   16.329    B/op
+Jsr310Benchmark.plusDays:·gc.count                                  thrpt  100    30.000             counts
+Jsr310Benchmark.plusDays:·gc.time                                   thrpt  100    68.000                 ms
+Jsr310Benchmark.simapleDateFormat                                   thrpt  100     4.240 ±    0.232  ops/us
+Jsr310Benchmark.simapleDateFormat:·gc.alloc.rate                    thrpt  100  2449.239 ±  130.091  MB/sec
+Jsr310Benchmark.simapleDateFormat:·gc.alloc.rate.norm               thrpt  100   910.757 ±   10.748    B/op
+Jsr310Benchmark.simapleDateFormat:·gc.churn.PS_Eden_Space           thrpt  100     0.001 ±    0.002  MB/sec
+Jsr310Benchmark.simapleDateFormat:·gc.churn.PS_Eden_Space.norm      thrpt  100    ≈ 10⁻⁴               B/op
+Jsr310Benchmark.simapleDateFormat:·gc.churn.PS_Survivor_Space       thrpt  100  3172.023 ± 2162.441  MB/sec
+Jsr310Benchmark.simapleDateFormat:·gc.churn.PS_Survivor_Space.norm  thrpt  100  1548.343 ± 1099.458    B/op
+Jsr310Benchmark.simapleDateFormat:·gc.count                         thrpt  100    20.000             counts
+Jsr310Benchmark.simapleDateFormat:·gc.time                          thrpt  100    59.000                 ms
+UuidBenchmark.parse                                                 thrpt  100     9.693 ±    0.112  ops/us
+UuidBenchmark.parse:·gc.alloc.rate                                  thrpt  100   197.266 ±    2.290  MB/sec
+UuidBenchmark.parse:·gc.alloc.rate.norm                             thrpt  100    32.028 ±    0.038    B/op
+UuidBenchmark.parse:·gc.count                                       thrpt  100       ≈ 0             counts
+UuidBenchmark.serialize                                             thrpt  100    34.974 ±    1.547  ops/us
+UuidBenchmark.serialize:·gc.alloc.rate                              thrpt  100  2166.849 ±   86.920  MB/sec
+UuidBenchmark.serialize:·gc.alloc.rate.norm                         thrpt  100    97.762 ±    1.316    B/op
+UuidBenchmark.serialize:·gc.churn.PS_Eden_Space                     thrpt  100     0.001 ±    0.002  MB/sec
+UuidBenchmark.serialize:·gc.churn.PS_Eden_Space.norm                thrpt  100    ≈ 10⁻⁴               B/op
+UuidBenchmark.serialize:·gc.churn.PS_Survivor_Space                 thrpt  100  3171.966 ± 2162.402  MB/sec
+UuidBenchmark.serialize:·gc.churn.PS_Survivor_Space.norm            thrpt  100   184.228 ±  128.175    B/op
+UuidBenchmark.serialize:·gc.count                                   thrpt  100    20.000             counts
+UuidBenchmark.serialize:·gc.time                                    thrpt  100    46.000                 ms
+
+Benchmark result is saved to jmh-result.text
